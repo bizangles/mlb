@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="Chart.min.js"></script>
+        <script src="data.js"></script>
+        <script>
+            $(function() {
+                var ctx = $('#myChart');
+                var myChart = new Chart.Line(ctx, {
+                    data: data,
+                    options: {
+                        fill: false,
+                        legend: {
+                            display: false,
+                        },
+                        scales: {
+                            xAxes: [{
+                                type: 'linear',
+                                position: 'bottom',
+                                ticks: {
+                                    stepSize: 5
+                                }
+                            }]
+                        }
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div style="width: 800px; height: 800px">
+            <canvas id="myChart"></canvas>
+        </div>
+    </body>
+</html>
